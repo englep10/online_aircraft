@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  devise_for :users
+  devise_for :models
+  devise_for :installs
   get 'pages/about'
 
   # The priority is based upon order of creation: first created -> highest priority.
