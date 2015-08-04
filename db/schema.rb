@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150804151321) do
+ActiveRecord::Schema.define(version: 20150804221155) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,6 +49,49 @@ ActiveRecord::Schema.define(version: 20150804151321) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
 
+  create_table "aircrafts", force: :cascade do |t|
+    t.integer  "manufactuer_id"
+    t.string   "serial_number"
+    t.string   "ask_price"
+    t.string   "contact_company"
+    t.string   "contact_name"
+    t.string   "contact_phone"
+    t.string   "contact_cell_phone"
+    t.string   "contact_fax"
+    t.string   "contact_email"
+    t.string   "contact_website"
+    t.text     "unique_selling_point"
+    t.string   "airframe_hour"
+    t.string   "total_landing"
+    t.string   "engine_type"
+    t.string   "engine_serial_number"
+    t.string   "msp"
+    t.string   "left_engine_hour"
+    t.string   "left_engine_cylce"
+    t.string   "right_engine_hour"
+    t.string   "right_engine_cycle"
+    t.text     "avionic"
+    t.string   "year_painted"
+    t.text     "exterior"
+    t.text     "interior"
+    t.text     "inspection"
+    t.string   "condition"
+    t.string   "registration"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  add_index "aircrafts", ["manufactuer_id"], name: "index_aircrafts_on_manufactuer_id", using: :btree
+
+  create_table "manufactuers", force: :cascade do |t|
+    t.string   "category"
+    t.string   "manufactuer"
+    t.string   "aircraft_model"
+    t.string   "range"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -71,4 +114,5 @@ ActiveRecord::Schema.define(version: 20150804151321) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "aircrafts", "manufactuers"
 end

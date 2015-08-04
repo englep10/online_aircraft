@@ -1,0 +1,59 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  manufactuer_id: 
+  serial_number: MyString
+  ask_price: MyString
+  contact_company: MyString
+  contact_name: MyString
+  contact_phone: MyString
+  contact_cell_phone: MyString
+  contact_fax: MyString
+  contact_email: MyString
+  contact_website: MyString
+  unique_selling_point: MyText
+  airframe_hour: MyString
+  total_landing: MyString
+  engine_type: MyString
+  engine_serial_number: MyString
+  msp: MyString
+  left_engine_hour: MyString
+  left_engine_cylce: MyString
+  right_engine_hour: MyString
+  right_engine_cycle: MyString
+  avionic: MyText
+  year_painted: MyString
+  exterior: MyText
+  interior: MyText
+  inspection: MyText
+  condition: MyString
+  registration: MyString
+
+two:
+  manufactuer_id: 
+  serial_number: MyString
+  ask_price: MyString
+  contact_company: MyString
+  contact_name: MyString
+  contact_phone: MyString
+  contact_cell_phone: MyString
+  contact_fax: MyString
+  contact_email: MyString
+  contact_website: MyString
+  unique_selling_point: MyText
+  airframe_hour: MyString
+  total_landing: MyString
+  engine_type: MyString
+  engine_serial_number: MyString
+  msp: MyString
+  left_engine_hour: MyString
+  left_engine_cylce: MyString
+  right_engine_hour: MyString
+  right_engine_cycle: MyString
+  avionic: MyText
+  year_painted: MyString
+  exterior: MyText
+  interior: MyText
+  inspection: MyText
+  condition: MyString
+  registration: MyString
