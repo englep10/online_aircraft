@@ -1,0 +1,9 @@
+<h1>Manufactuer#index</h1>
+
+<% @manufactuer.each do |manufactuer| %>
+  <li>
+    <%= link_to manufactuer do %>
+      <%= manufactuer.manufactuer %>
+    <% end %>
+  </li>
+<% end %>

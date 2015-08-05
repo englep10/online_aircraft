@@ -1,0 +1,11 @@
+<h1><%= @manufactuer.manufactuer %></h1>
+
+<ul>
+  <% @aircrafts.each do |aircraft| %>
+    <li>
+      <%= link_to [aircraft.manufactuer, aircraft] do %>
+        <%= aircraft.serial_number %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
