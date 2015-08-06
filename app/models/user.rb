@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
   validates :name, presence: true, length: {maximum: 25}
 
   after_create :send_notification
+  has_many :watchlists
+  has_many :aircrafts, through: :watchlists
 
   def send_notification
     MyMailer.new_user(self).deliver_now

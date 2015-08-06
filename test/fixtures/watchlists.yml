@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  aircraft_id: 
+  user_id: 
+
+two:
+  aircraft_id: 
+  user_id: 

@@ -1,4 +1,23 @@
-<h1>Aircraft#show</h1>
+<h1>Aircraft#shossw</h1>
 
 <p><%= @aircraft.serial_number %></p>
-<%= image_tag @aircraft.image %>
+
+<% if !@watched %>
+  <% if user_signed_in? %>
+    <%= form_tag watch_path do %>
+      <%= hidden_field_tag 'aircraft_id', @aircraft.id %>
+      <button class="btn waves-effect waves-light pink darken-2">
+        Add to Watchlist
+      </button>
+    <% end %>
+  <% else %>
+    <% link_to new_user_session_path do %>
+      <button class="btn waves-effect waves-light pink darken-2">
+        Add to Watchlist
+      </button>
+
+    <% end %>
+  <% end %>
+<% else %>
+<h5><%= current_user.name %> is already following</h5>
+<% end %>

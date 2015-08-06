@@ -6,5 +6,6 @@ class ManufactuerController < ApplicationController
   def show
     @manufactuer = Manufactuer.find(params[:id])
     @aircrafts = @manufactuer.aircrafts
+
   end
 end
