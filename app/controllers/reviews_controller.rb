@@ -9,10 +9,9 @@ class ReviewsController < ApplicationController
 
   def destroy
     @review = Review.find(params[:id])
-    aircraft = @review.aircraft_id
+    aircraft = @review.aircraft
     @review.destroy
-
-    redirect_to aircraft
+    redirect_to aircraft_path
   end
 
   private

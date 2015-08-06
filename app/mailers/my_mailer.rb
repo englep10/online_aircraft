@@ -13,7 +13,7 @@ class MyMailer < ActionMailer::Base
 			"merg_vars": [
 				{
 					rcpt: user.email,
-					vars: [{"name": "USER_NAME", "content": "Test"}]
+					vars: [{"name", "USER_NAME", "content", "Test"}]
 				}
 			]
 		}

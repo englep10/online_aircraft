@@ -1,12 +1,12 @@
 <%= form_for([@aircraft, @review]) do |f| %>
-
+  <%= f.label :rating %>
   <%= f.range_field :rating %>
-  <%= f.text_field :comment %>
 
-  <%= f.hidden_field :aircraft_id, :value => @aircraft.id %>
-  <%= f.hidden_field :user_id, :value => current_user.id %>
+	<%= f.text_field :comment %>
 
-  <div class="actions"
-   <%= f.submit %>
-  </div>
+	<%= f.hidden_field :aircraft_id, :value => @aircraft.id %>
+
+	<div class="actions">
+		<%= f.submit %>
+	</div>
 <% end %>

@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   end
 
   resources :aircrafts do
-    resources :reviews, only: [:create, :destroy]
+    resources :reviews, only:[:create, :destroy]
   end
 
 
