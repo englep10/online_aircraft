@@ -21,3 +21,22 @@
 <% else %>
 <h5><%= current_user.name %> is already following</h5>
 <% end %>
+
+<div class="col m8">
+  <div class="card z-depth-2">
+    <div class="card-image">
+      <%= image_tag @aircraft.image %>
+    </div>
+    <div class="card-content grey-text tex-darken-4">
+
+    </div>
+
+    <div class="card-content">
+      <h4>Reviews</h4>
+      <div><%= render 'reviews/form' if @joined && !@hasReview %></div>
+      <div><%= render 'reviews/index' %></div>
+    </div>
+  </div>
+</div>
+
+</div>

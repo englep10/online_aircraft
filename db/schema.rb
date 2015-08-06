@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150805201702) do
+ActiveRecord::Schema.define(version: 20150806141619) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -111,6 +111,30 @@ ActiveRecord::Schema.define(version: 20150805201702) do
     t.string   "slug"
   end
 
+  create_table "ratings", force: :cascade do |t|
+    t.integer  "aircraft_id"
+    t.integer  "user_id"
+    t.text     "comment"
+    t.datetime "created_at",  null: false
+    t.integer  "amount"
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "ratings", ["aircraft_id"], name: "index_ratings_on_aircraft_id", using: :btree
+  add_index "ratings", ["user_id"], name: "index_ratings_on_user_id", using: :btree
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer  "aircraft_id"
+    t.integer  "user_id"
+    t.text     "comment"
+    t.datetime "created_at",  null: false
+    t.integer  "rating"
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "reviews", ["aircraft_id"], name: "index_reviews_on_aircraft_id", using: :btree
+  add_index "reviews", ["user_id"], name: "index_reviews_on_user_id", using: :btree
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -145,6 +169,10 @@ ActiveRecord::Schema.define(version: 20150805201702) do
   add_index "watchlists", ["user_id"], name: "index_watchlists_on_user_id", using: :btree
 
   add_foreign_key "aircrafts", "manufactuers"
+  add_foreign_key "ratings", "aircrafts"
+  add_foreign_key "ratings", "users"
+  add_foreign_key "reviews", "aircrafts"
+  add_foreign_key "reviews", "users"
   add_foreign_key "watchlists", "aircrafts"
   add_foreign_key "watchlists", "users"
 end
