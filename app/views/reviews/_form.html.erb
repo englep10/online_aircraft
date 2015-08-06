@@ -1,6 +1,6 @@
 <%= form_for([@aircraft, @review]) do |f| %>
 
-  <%= f.text_field :range %>
+  <%= f.range_field :rating %>
   <%= f.text_field :comment %>
 
   <%= f.hidden_field :aircraft_id, :value => @aircraft.id %>
@@ -10,9 +10,3 @@
    <%= f.submit %>
   </div>
 <% end %>
-
-
-
-  <!-- <div class="input-range">
-    <%= f.range :, autofocus: true, :class => "validate", :placeholder => "Name" %>
-  </div> -->
