@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
-
+  # nice job using active admin, i think u used this to seed your database? Why might this be bad practice going forward? Whats the importance of seeding information
+  # routes look good otherwise
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   devise_for :users, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout', :edit => 'profile'},
              :controllers => {:omniauth_callbacks => "omniauth_callbacks"}
   get 'pages/about'
+
+  # how does the watchlist get created? Is this something the user can change?
   get '/myaircrafts' => 'aircrafts#list'
   post '/watch' => 'watchlists#watch'
 

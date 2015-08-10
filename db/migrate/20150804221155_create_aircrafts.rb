@@ -1,4 +1,6 @@
 class CreateAircrafts < ActiveRecord::Migration
+  # wat, how do you manage all of this? remember with migration we want to stick with our MVP,
+  # what information is most pertinent to your user.
   def change
     create_table :aircrafts do |t|
       t.references :manufactuer, index: true, foreign_key: true

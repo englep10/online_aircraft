@@ -1,5 +1,7 @@
 class OmniauthCallbacksController < Devise::OmniauthCallbacksController
-
+# i think its really cool you incorporated omni auth using devise. But how are you using this authentication to your advantage
+# as we start to learn more and more code. We realize we have a myriad of tools. But really
+# we can't use all of them. We need to seek out technologies that are specific to the needs of the application.
   def google_oauth2
     @user = User.find_for_google_oauth2(request.env["omniauth.auth"], current_user)
 

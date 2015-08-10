@@ -16,6 +16,8 @@ class AircraftsController < ApplicationController
     @hasReview = @reviews.find_by(user_id: current_user.id) if current_user
   end
 
+# was curious how the watch list works exactly.
+# doesn't look like a user creates aircraft so how exactly does the association between user and aircraft get created?
   def list
     if !current_user.nil?
 
